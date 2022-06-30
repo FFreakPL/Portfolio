@@ -6,7 +6,7 @@
 
 @keyframes zoomIn {
   from {
-    transform: scale(10);
+    transform: scale(0);
     opacity: 0; }
   to {
     transform: scale(1);
@@ -44,25 +44,36 @@ body {
   display: flex;
   justify-content: center;
   align-items: center; }
-  .logo_container {
-    width: 50vw;
-    height: 20vh;
-    border: none;
-    background-color: black;
-    background-image: url("../../public/images/logo_red_transparent.png");
-    background-position: center;
-    background-size: cover;
-    animation: zoomIn 2s ease alternate, pulse 1s 2s infinite alternate; }
+  @media (max-width: 792px) {
+    .logo_container {
+      width: 60vw;
+      height: 30vh;
+      border: none;
+      background-color: black;
+      background-image: url("../../public/images/logo_red_transparent.png");
+      background-position: center;
+      background-size: cover;
+      animation: zoomIn 2s ease alternate, pulse 1s 2s infinite alternate; } }
+  @media (min-width: 793px) and (max-width: 1279px) {
+    .logo_container {
+      width: 60vw;
+      height: 30vh;
+      border: none;
+      background-color: black;
+      background-image: url("../../public/images/logo_red_transparent.png");
+      background-position: center;
+      background-size: cover;
+      animation: zoomIn 2s ease alternate, pulse 1s 2s infinite alternate; } }
+  @media (min-width: 1280px) {
+    .logo_container {
+      width: 30vw;
+      height: 30vh;
+      border: none;
+      border: none;
+      background-color: black;
+      background-image: url("../../public/images/logo_red_transparent.png");
+      background-position: center;
+      background-size: cover;
+      animation: zoomIn 2s ease alternate, pulse 1s 2s infinite alternate; } }
   .logo_container:hover {
     cursor: pointer; }
-  .logo_header {
-    font-size: 7rem;
-    font-style: italic;
-    text-align: center;
-    color: #DA0513;
-    justify-content: center;
-    align-items: flex-start;
-    animation: fadeIn 1s ease forwards; }
-  .logo_header p:first-child {
-    font-size: 3rem;
-    margin-bottom: -5rem; }

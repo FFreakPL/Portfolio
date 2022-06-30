@@ -12,9 +12,6 @@ function handleClick() {
     return (
         <div className="logo">
             <button type="button" className="logo_container" onClick={handleClick}></button>
-            <div className="logo_header hidden">
-                <p>FFREAK.PL</p>
-            </div>
         </div>
     )
 }

@@ -9,7 +9,7 @@
 }
 @keyframes zoomIn {
   from {
-    transform: scale(10);
+    transform: scale(0);
     opacity: 0;
   }
   to {
@@ -32,6 +32,31 @@
   to {
     opacity: 1;
   }
+}
+
+//Mixins
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: 793px) and (max-width: 1279px) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (max-width: 792px) {
+    @content;
+  }
+}
+@mixin logoContainer {
+  border: none;
+  background-color: black;
+  background-image: url("../../public/images/logo_red_transparent.png");
+  background-position: center;
+  background-size: cover;
+  animation: zoomIn 2s ease alternate, pulse 1s 2s infinite alternate;
 }
 
 body {
@@ -58,30 +83,24 @@ body {
   align-items: center;
 
   &_container {
-    width: 50vw;
-    height: 20vh;
-    border: none;
-    background-color: black;
-    background-image: url("../../public/images/logo_red_transparent.png");
-    background-position: center;
-    background-size: cover;
-    animation: zoomIn 2s ease alternate, pulse 1s 2s infinite alternate;
+    @include mobile {
+      width: 60vw;
+      height: 30vh;
+      @include logoContainer;
+    }
+    @include tablet {
+      width: 60vw;
+      height: 30vh;
+      @include logoContainer;
+    }
+    @include desktop {
+      width: 30vw;
+      height: 30vh;
+      border: none;
+      @include logoContainer;
+    }
   }
   &_container:hover {
     cursor: pointer;
-  }
-
-  &_header {
-    font-size: 7rem;
-    font-style: italic;
-    text-align: center;
-    color: #DA0513;
-    justify-content: center;
-    align-items: flex-start;
-    animation: fadeIn 1s ease forwards;
-  }
-  &_header p:first-child {
-    font-size: 3rem;
-    margin-bottom: -5rem;
   }
 }
