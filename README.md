@@ -1,4 +1,4 @@
-#Portfolio Page
+# Portfolio Page
 in progress...
 
 `Loading page with button`
@@ -8,7 +8,7 @@ in progress...
 <p><img width="360" alt="desktop landing page" src="https://user-images.githubusercontent.com/94534923/176795840-12a04419-ee82-4d46-97cf-f47167ee86e7.png"></p>
 <p><img width="360" alt="mobile landing page" src="https://user-images.githubusercontent.com/94534923/176795842-5fd5a517-81f4-406c-aa23-1193c9d5915b.png"></p>
 
-##Running APP
+## Running APP
 <p>https://portfoliopage-sepia.vercel.app/</p>
 
 ## Feautures
