@@ -9,7 +9,7 @@ in progress...
 <p><img width="360" alt="mobile landing page" src="https://user-images.githubusercontent.com/94534923/176795842-5fd5a517-81f4-406c-aa23-1193c9d5915b.png"></p>
 
 ##Running APP
-https://portfoliopage-sepia.vercel.app/
+<p>https://portfoliopage-sepia.vercel.app/</p>
 
 ## Feautures
 <li>Responsive design</li>
