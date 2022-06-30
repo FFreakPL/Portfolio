@@ -1,0 +1,68 @@
+@keyframes pulse {
+  from {
+    transform: scale(1); }
+  to {
+    transform: scale(1.5); } }
+
+@keyframes zoomIn {
+  from {
+    transform: scale(10);
+    opacity: 0; }
+  to {
+    transform: scale(1);
+    opacity: 1; } }
+
+@keyframes fadeOut {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+body {
+  font-family: league-gothic, sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black; }
+
+.hidden {
+  display: none; }
+
+.logo {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .logo_container {
+    width: 50vw;
+    height: 20vh;
+    border: none;
+    background-color: black;
+    background-image: url("../../public/images/logo_red_transparent.png");
+    background-position: center;
+    background-size: cover;
+    animation: zoomIn 2s ease alternate, pulse 1s 2s infinite alternate; }
+  .logo_container:hover {
+    cursor: pointer; }
+  .logo_header {
+    font-size: 7rem;
+    font-style: italic;
+    text-align: center;
+    color: #DA0513;
+    justify-content: center;
+    align-items: flex-start;
+    animation: fadeIn 1s ease forwards; }
+  .logo_header p:first-child {
+    font-size: 3rem;
+    margin-bottom: -5rem; }
