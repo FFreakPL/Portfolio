@@ -2,7 +2,7 @@
 in progress...
 
 `Loading page with button`
-<img width="360" alt="logo page" src="https://user-images.githubusercontent.com/94534923/176795522-22773069-8ef7-4bef-b19c-790691099e07.png">
+<p><img width="360" alt="logo page" src="https://user-images.githubusercontent.com/94534923/176795522-22773069-8ef7-4bef-b19c-790691099e07.png"></p>
 
 `Responsive landing page`
 <p><img width="360" alt="desktop landing page" src="https://user-images.githubusercontent.com/94534923/176795840-12a04419-ee82-4d46-97cf-f47167ee86e7.png"></p>
