@@ -1,10 +1,10 @@
 //Logo
 @keyframes pulse {
   from {
-    transform: scale(1);
+    transform: scale(1.5);
   }
   to {
-    transform: scale(1.5);
+    transform: scale(1);
   }
 }
 @keyframes zoomIn {
@@ -13,7 +13,7 @@
     opacity: 0;
   }
   to {
-    transform: scale(1);
+    transform: scale(1.5);
     opacity: 1;
   }
 }
@@ -431,7 +431,7 @@ body {
 
 .inner {
   white-space: nowrap;
-  transition: transform 0.5s;
+  transition: transform 1s;
 }
 
 .fa-arrow-left-long {
