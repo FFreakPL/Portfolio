@@ -145,6 +145,10 @@ body {
     width: 8vw;
     height: 100%;
     }
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 
@@ -343,6 +347,7 @@ body {
     @include mobile {
       display:none;
     }
+
   }
   &_button_next {
     @include font;
@@ -432,11 +437,17 @@ body {
 .fa-arrow-left-long {
   color: $primary-color;
   font-size: 3rem;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .fa-arrow-right-long {
   color: $primary-color;
   font-size: 3rem;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 ///Aboutme
@@ -455,4 +466,10 @@ body {
   @include tablet {
     font-size: 2rem;
   }
+}
+
+//Contact
+.contact {
+  text-align: center;
+  font-size: 2rem;
 }
