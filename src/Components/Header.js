@@ -4,7 +4,6 @@ import "../css/out.css";
 
 function Header() {
 
-
     return (
         <header className="top_nav">
             <div className="top_nav_logo"/>
@@ -14,7 +13,7 @@ function Header() {
             </label>
             <ul className="menu">
                 <li className="menu_element"><a href="#" className="menu_route">About Me</a></li>
-                <li className="menu_element"><a href="#" className="menu_route">Contact</a></li>
+                <li className="menu_element"><a href="./Contact" className="menu_route">Contact</a></li>
             </ul>
         </header>
     )

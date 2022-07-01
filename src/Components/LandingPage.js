@@ -6,6 +6,7 @@ import Carousel, {CarouselItem} from "./Carousel";
 import CarouselHeader from "./CarouselHeader";
 
 function LandingPage() {
+const navigate = useNavigate();
 
     return (
         <>
