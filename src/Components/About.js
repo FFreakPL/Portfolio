@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './Header'
 import "../css/out.css";
 
-function Aboutme() {
+function About() {
 
     return (
         <>
@@ -46,4 +46,4 @@ function Aboutme() {
     )
 }
 
-export default Aboutme;
+export default About;

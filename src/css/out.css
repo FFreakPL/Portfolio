@@ -24,6 +24,12 @@
   to {
     opacity: 1; } }
 
+@keyframes leftToRight {
+  from {
+    transform: translateX(-100%); }
+  to {
+    transform: translateX(100%); } }
+
 body {
   font-family: league-gothic, sans-serif;
   font-style: italic;
@@ -52,7 +58,7 @@ body {
       height: 30vh;
       border: none;
       background-color: transparent;
-      background-image: url("../../public/images/logo_red_transparent.png");
+      background-image: url("../images/logo_red_transparent.png");
       background-position: center;
       background-size: cover;
       animation: zoomIn 2s ease alternate, pulse 1s 2s infinite alternate; } }
@@ -62,7 +68,7 @@ body {
       height: 30vh;
       border: none;
       background-color: transparent;
-      background-image: url("../../public/images/logo_red_transparent.png");
+      background-image: url("../images/logo_red_transparent.png");
       background-position: center;
       background-size: cover;
       animation: zoomIn 2s ease alternate, pulse 1s 2s infinite alternate; } }
@@ -73,7 +79,7 @@ body {
       border: none;
       border: none;
       background-color: transparent;
-      background-image: url("../../public/images/logo_red_transparent.png");
+      background-image: url("../images/logo_red_transparent.png");
       background-position: center;
       background-size: cover;
       animation: zoomIn 2s ease alternate, pulse 1s 2s infinite alternate; } }
@@ -91,10 +97,10 @@ body {
   height: 8vh;
   width: 100vw; }
   .top_nav_logo {
-    background-image: url("../../public/images/logo_red_transparent.png");
+    background-image: url("../images/logo_red_transparent.png");
     background-position: center;
     background-size: cover;
-    width: 32vw;
+    width: 24vw;
     height: 100%;
     margin-left: 1rem; }
     @media (min-width: 768px) and (max-width: 1279px) {
@@ -242,7 +248,7 @@ body {
 
 .carousel {
   overflow: hidden;
-  position: relative; }
+  height: 70vh; }
   .carousel_button_prev, .carousel_button_prev {
     margin: 5px; }
   .carousel_button_prev {
@@ -281,10 +287,13 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 50vh;
+    height: 60vh;
     border: 4vw solid white;
     color: #DA0419;
     font-size: 2rem; }
+    @media (min-width: 1280px) {
+      .carousel_item {
+        border: 4vw solid white; } }
   .carousel_indicators {
     display: flex;
     justify-content: center; }
@@ -302,34 +311,53 @@ body {
     width: 1rem;
     height: 1rem; }
   .carousel_container {
-    position: absolute;
-    bottom: 0rem;
     display: flex;
-    margin-bottom: 2rem;
     width: 100vw;
     justify-content: center;
     align-items: center; }
-  .carousel_planyourride {
+  .carousel_reactProjects {
     width: 100%;
     height: 100%;
-    background-image: url("../../public/images/planyourride.jpeg");
     background-size: contain;
-    background-position: center; }
+    background-position: center;
+    background-image: url("../images/ReactProjects.jpg");
+    border-radius: 2rem; }
     @media (min-width: 1280px) {
-      .carousel_planyourride {
+      .carousel_reactProjects {
+        background-repeat: no-repeat; } }
+  .carousel_stylingProjects {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+    background-image: url("../images/StylingProjects.jpg");
+    border-radius: 2rem; }
+    @media (min-width: 1280px) {
+      .carousel_stylingProjects {
+        background-repeat: no-repeat; } }
+  .carousel_snippets {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+    background-image: url("../images/Snippets.jpg");
+    border-radius: 2rem; }
+    @media (min-width: 1280px) {
+      .carousel_snippets {
         background-repeat: no-repeat; } }
   .carousel_header {
     font-size: 2rem;
     text-align: center;
-    margin-top: 3rem;
+    margin-top: 2rem;
     margin-bottom: 2rem; }
     @media (min-width: 1280px) {
       .carousel_header {
-        font-size: 4rem; } }
+        font-size: 4rem;
+        margin-bottom: 0; } }
 
 .inner {
   white-space: nowrap;
-  transition: transform 1s; }
+  transition: transform .3s; }
 
 .fa-arrow-left-long {
   color: #DA0419;
@@ -361,3 +389,41 @@ body {
 .contact {
   text-align: center;
   font-size: 2rem; }
+
+.footer_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; }
+  @media (min-width: 768px) and (max-width: 1279px) {
+    .footer_container {
+      height: 12vh; } }
+  @media (min-width: 1280px) {
+    .footer_container {
+      height: 10vh; } }
+
+.footer img {
+  height: 1rem; }
+  @media (min-width: 768px) and (max-width: 1279px) {
+    .footer img {
+      height: 2rem; } }
+  @media (min-width: 1280px) {
+    .footer img {
+      height: 2rem; } }
+
+.footer_info {
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem; }
+  @media (min-width: 768px) and (max-width: 1279px) {
+    .footer_info {
+      font-size: 1.5rem; } }
+  @media (min-width: 1280px) {
+    .footer_info {
+      font-size: 1.5rem; } }
+
+.footer_icons {
+  margin-right: 1rem; }
+
+.footer_icons a:first-of-type {
+  margin-right: 1rem; }

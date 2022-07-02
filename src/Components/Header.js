@@ -17,7 +17,8 @@ const navigate = useNavigate();
                 <div className='menu_button'></div>
             </label>
             <ul className="menu">
-                <li className="menu_element"><a href="./aboutme" className="menu_route">About Me</a></li>
+                <li className="menu_element"><a href="./about" className="menu_route">About Me</a></li>
+                <li className="menu_element"><a href="./hobby" className="menu_route">My Hobby</a></li>
                 <li className="menu_element"><a href="./contact" className="menu_route">Contact</a></li>
             </ul>
         </header>

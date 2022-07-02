@@ -1,4 +1,4 @@
-//Logo
+//Keyframes
 @keyframes pulse {
   from {
     transform: scale(1.5);
@@ -33,6 +33,14 @@
     opacity: 1;
   }
 }
+@keyframes leftToRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
 
 //Mixins
 @mixin desktop {
@@ -53,7 +61,7 @@
 @mixin logoContainer {
   border: none;
   background-color: transparent;
-  background-image: url("../../public/images/logo_red_transparent.png");
+  background-image: url("../images/logo_red_transparent.png");
   background-position: center;
   background-size: cover;
   animation: zoomIn 2s ease alternate, pulse 1s 2s infinite alternate;
@@ -62,6 +70,15 @@
   font-family: league-gothic, sans-serif;
   font-style: italic;
   color: #DA0419;
+}
+@mixin urls {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+  @include desktop {
+    background-repeat: no-repeat;
+  }
 }
 
 //Variables
@@ -129,10 +146,10 @@ body {
 
 
   &_logo {
-    background-image: url("../../public/images/logo_red_transparent.png");
+    background-image: url("../images/logo_red_transparent.png");
     background-position: center;
     background-size: cover;
-    width: 32vw;
+    width: 24vw;
     height:100%;
     margin-left: 1rem;
 
@@ -327,7 +344,8 @@ body {
 //Carousel
 .carousel {
   overflow: hidden;
-  position: relative;
+  height: 70vh;
+  //box-shadow: 1px -10px 20px 10px lightgrey;
 
   &_button_prev,
   &_button_prev, {
@@ -368,10 +386,14 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 50vh;
+    //height: 50vh;
+    height: 60vh;
     border: 4vw solid white;
     color: $primary-color;
     font-size: 2rem;
+    @include desktop {
+      border: 4vw solid white;
+    }
   }
 
   &_indicators {
@@ -398,40 +420,46 @@ body {
   }
 
   &_container {
-    position: absolute;
-    bottom: 0rem;
     display: flex;
-    margin-bottom: 2rem;
     width: 100vw;
     justify-content: center;
     align-items: center;
   }
 
-  &_planyourride {
-    width: 100%;
-    height: 100%;
-    background-image: url("../../public/images/planyourride.jpeg");
-    background-size: contain;
-    background-position: center;
-    @include desktop {
-      background-repeat: no-repeat;
-    }
-  }
 
+  &_reactProjects {
+    @include urls;
+    background-image: url("../images/ReactProjects.jpg");
+    border-radius: 2rem;
+  }
+  &_stylingProjects {
+    @include urls;
+    background-image: url("../images/StylingProjects.jpg");
+    border-radius: 2rem;
+  }
+  &_snippets {
+    @include urls;
+    background-image: url("../images/Snippets.jpg");
+    border-radius: 2rem;
+  }
   &_header {
     font-size: 2rem;
     text-align: center;
-    margin-top: 3rem;
+    margin-top: 2rem;
     margin-bottom: 2rem;
+    //box-shadow: 1px 0px 30px 10px lightgrey;
+    //animation: leftToRight 3s cubic-bezier(.2,.99,.8,0) infinite;
     @include desktop {
       font-size: 4rem;
+      margin-bottom: 0;
     }
   }
 }
 
+
 .inner {
   white-space: nowrap;
-  transition: transform 1s;
+  transition: transform .3s;
 }
 
 .fa-arrow-left-long {
@@ -473,3 +501,53 @@ body {
   text-align: center;
   font-size: 2rem;
 }
+
+//Footer
+.footer {
+
+  &_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    //height: 8vh;
+
+    @include tablet {
+      height: 12vh;
+    }
+    @include desktop {
+      height: 10vh;
+    }
+  }
+
+  img {
+    height: 1rem;
+    @include tablet {
+      height: 2rem;
+    }
+    @include desktop {
+      height: 2rem;
+    }
+  }
+
+  &_info {
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    @include tablet {
+      font-size: 1.5rem;
+    }
+    @include desktop {
+      font-size: 1.5rem;
+    }
+  }
+
+  &_icons {
+  margin-right: 1rem;
+  }
+
+  &_icons a:first-of-type {
+  margin-right: 1rem;
+  }
+}
+
