@@ -132,8 +132,6 @@ body {
 }
 
 .app {
-  display:flex;
-  flex-direction: column;
   background-color: #d3d3d32e;
 }
 //Logo
@@ -853,5 +851,95 @@ body {
     @include desktop {
       animation: githubIcon .3s ease forwards;
     }
+  }
+}
+
+//Form
+.form {
+  display: flex;
+  flex-direction: column;
+
+  @include tablet {
+    margin-top: 20px;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+
+    &:first-of-type {
+      margin-bottom: 42px;
+    }
+  }
+
+  &__label {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $primary-color;
+    line-height: 0.9rem;
+    letter-spacing: 3px;
+    font-size: 0.6875rem;
+  }
+
+  &__input {
+    border: none;
+    border-bottom: 1px solid lightgrey;
+    background-color: transparent;
+    line-height: 2.625rem;
+  }
+
+  &__consent {
+    margin-top: 30px;
+  }
+
+  &__checkbox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 1.375rem;
+
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+
+      &:checked {
+        ~ .checkbox {
+          //background-image: url(../assets/Checkmark.svg);
+          background-position: center;
+          background-size: 50%;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+
+    .checkbox {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: white;
+      border: 1px solid lightgrey;
+      border-radius: 4px;
+    }
+
+    .consent__text {
+      margin: 0 10px;
+      font-size: 0.75rem;
+      color: lightgrey;
+      line-height: 17px;
+    }
+  }
+
+  .btn {
+    font-size: 0.8125rem;
+    padding: 20px 97px;
+    align-self: flex-end;
+    margin-top: 20px;
   }
 }
