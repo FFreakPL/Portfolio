@@ -24,7 +24,7 @@ function ReactProjects() {
                             <li key={index} className={`reactProjects_item`}>
                                 {/*<p>{project.toUpperCase()}</p>*/}
                                 <a href={(`https://${hreff[index]}.vercel.app`)}>
-                                    <div className={`reactProjects_link_${project}`} style={{backgroundImage: `url(../images/${hreff[index]}.jpeg)`}}></div>
+                                    <div className={`reactProjects_link_${project}`} style={{backgroundImage: `url(../images/${hreff[index]}.jpeg)` ,backgroundSize: "cover", backgroundPosition: "center"}}></div>
                                     {/*<img src={require(`../images/${hreff[index]}.jpeg`)}/>*/}
                                 </a>
                             </li>)}
