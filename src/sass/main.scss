@@ -1,3 +1,5 @@
+@import "./reset";
+
 //Variables
 $primary-color: #DA0419;
 $background-color: black;
@@ -382,6 +384,10 @@ body {
 .carousel {
   overflow: hidden;
   height: 82vh;
+
+  @include desktop {
+    height: 80vh;
+  }
   //box-shadow: 1px -10px 20px 10px lightgrey;
 
   &_button_prev,
@@ -498,6 +504,7 @@ body {
     }
     @include desktop {
       font-size: 3rem;
+      height: 8vh;
     }
   }
 }
