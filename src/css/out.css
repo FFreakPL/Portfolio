@@ -14,11 +14,12 @@
 
 @keyframes hoverZoom {
   from {
-    transfrom: scale(1);
-    border: 1rem solid white; }
+    transform: scale(1);
+    border-radius: 1rem; }
   to {
     transform: scale(1.2);
-    border: 0.5rem solid #DA0419; } }
+    border: 0.5rem solid #DA0419;
+    border-radius: 1rem; } }
 
 @keyframes opacity {
   from {
@@ -44,6 +45,12 @@
   to {
     transform: translateX(100%); } }
 
+@keyframes textColor {
+  from {
+    color: #DA0419; }
+  to {
+    color: black; } }
+
 body {
   font-family: league-gothic, sans-serif;
   font-style: italic;
@@ -62,7 +69,8 @@ body {
 
 .app {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  background-color: #d3d3d32e; }
 
 .logo {
   width: 100vw;
@@ -115,20 +123,17 @@ body {
   height: 8vh;
   width: 100vw; }
   .top_nav_logo {
-    background-image: url("../images/logo_red_transparent.png");
-    background-position: center;
-    background-size: cover;
-    width: 24vw;
-    height: 100%;
+    font-size: 3rem;
+    color: #DA0419;
+    display: flex;
+    align-items: center;
     margin-left: 1rem; }
     @media (min-width: 768px) and (max-width: 1279px) {
       .top_nav_logo {
-        width: 20vw;
-        height: 100%; } }
+        font-size: 4rem; } }
     @media (min-width: 1280px) {
       .top_nav_logo {
-        width: 8vw;
-        height: 100%; } }
+        font-size: 4rem; } }
     .top_nav_logo:hover {
       cursor: pointer; }
 
@@ -144,6 +149,8 @@ body {
     color: #DA0419;
     font-size: 1.5rem;
     margin: 2rem; }
+    .menu_route:hover {
+      animation: textColor .3s ease forwards, hooverZoom .3s ease forwards; }
   .menu li {
     margin: 0 1rem;
     overflow: hidden; }
@@ -306,12 +313,10 @@ body {
     align-items: center;
     justify-content: center;
     height: 60vh;
-    border: 4vw solid white;
     color: #DA0419;
-    font-size: 2rem; }
-    @media (min-width: 1280px) {
-      .carousel_item {
-        border: 4vw solid white; } }
+    font-size: 2rem;
+    padding-left: 4vw;
+    padding-right: 4vw; }
   .carousel_indicators {
     display: flex;
     justify-content: center; }
@@ -369,6 +374,12 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 1.5rem; }
+    @media (min-width: 768px) and (max-width: 1279px) {
+      .carousel_header {
+        font-size: 2rem; } }
+    @media (min-width: 1280px) {
+      .carousel_header {
+        font-size: 3rem; } }
 
 .inner {
   white-space: nowrap;
@@ -408,6 +419,7 @@ body {
 .footer {
   height: 4vh; }
   .footer_container {
+    box-shadow: 1px -8px 24px 0px lightgrey;
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -455,7 +467,8 @@ body {
     list-style: none;
     width: 40%;
     height: 20vh;
-    background-image: url("../images/planyourride.jpeg");
+    box-shadow: 0px 0px 34px 3px rgba(135, 135, 135, 0.31);
+    border-radius: 1rem;
     margin: 0.5rem; }
     @media (min-width: 768px) and (max-width: 1279px) {
       .reactProjects_item {
@@ -473,17 +486,108 @@ body {
       @media (min-width: 1280px) {
         .reactProjects_item p {
           font-size: 2rem; } }
-    .reactProjects_item img {
-      width: 40%;
-      height: 20vh;
-      border: 0.5rem solid white; }
+  .reactProjects_link_planyourride {
+    background-image: url("../images/ReactProjects/planyourride.jpeg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%; }
+    .reactProjects_link_planyourride:hover {
+      animation: hoverZoom 0.3s ease forwards; }
+
+.stylingProjects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100vw; }
+  .stylingProjects_list {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+    min-height: 88vh; }
+  .stylingProjects_item {
+    list-style: none;
+    width: 40%;
+    height: 20vh;
+    box-shadow: 0px 0px 34px 3px rgba(135, 135, 135, 0.31);
+    border-radius: 1rem;
+    margin: 0.5rem; }
+    @media (min-width: 768px) and (max-width: 1279px) {
+      .stylingProjects_item {
+        height: 30vh; } }
+    @media (min-width: 1280px) {
+      .stylingProjects_item {
+        width: 25vw;
+        height: 35vh;
+        margin: 1rem; } }
+    .stylingProjects_item p {
+      margin: 0; }
       @media (min-width: 768px) and (max-width: 1279px) {
-        .reactProjects_item img {
-          height: 30vh; } }
+        .stylingProjects_item p {
+          font-size: 2rem; } }
       @media (min-width: 1280px) {
-        .reactProjects_item img {
-          width: 25vw;
-          height: 35vh;
-          margin: 1rem; }
-          .reactProjects_item img:hover {
-            animation: hoverZoom 0.3s ease forwards; } }
+        .stylingProjects_item p {
+          font-size: 2rem; } }
+  .stylingProjects_link_ffreak-bestshop {
+    background-image: url("../images/StylingProjects/ffreak_bestshop.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%; }
+    .stylingProjects_link_ffreak-bestshop:hover {
+      animation: hoverZoom 0.3s ease forwards; }
+  .stylingProjects_link_ffreak-verti {
+    background-image: url("../images/StylingProjects/ffreak_verti.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%; }
+    .stylingProjects_link_ffreak-verti:hover {
+      animation: hoverZoom 0.3s ease forwards; }
+
+.snippets {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100vw; }
+  .snippets_list {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+    min-height: 88vh; }
+  .snippets_item {
+    list-style: none;
+    width: 40%;
+    height: 20vh;
+    box-shadow: 0px 0px 34px 3px rgba(135, 135, 135, 0.31);
+    border-radius: 1rem;
+    margin: 0.5rem; }
+    @media (min-width: 768px) and (max-width: 1279px) {
+      .snippets_item {
+        height: 30vh; } }
+    @media (min-width: 1280px) {
+      .snippets_item {
+        width: 25vw;
+        height: 35vh;
+        margin: 1rem; } }
+    .snippets_item p {
+      margin: 0; }
+      @media (min-width: 768px) and (max-width: 1279px) {
+        .snippets_item p {
+          font-size: 2rem; } }
+      @media (min-width: 1280px) {
+        .snippets_item p {
+          font-size: 2rem; } }

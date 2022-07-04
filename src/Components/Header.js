@@ -11,7 +11,7 @@ const navigate = useNavigate();
 
     return (
         <header className="top_nav">
-            <div className="top_nav_logo" onClick={() => backToMainPage()}/>
+            <div className="top_nav_logo" onClick={() => backToMainPage()}>FFREAK.</div>
             <input id="menu_toggle" type="checkbox"/>
             <label className='menu_button_container' htmlFor="menu_toggle">
                 <div className='menu_button'></div>

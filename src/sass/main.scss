@@ -25,12 +25,13 @@ $alt-background-color: white;
 }
 @keyframes hoverZoom {
   from {
-    transfrom: scale(1);
-    border: 1rem solid white;
+    transform: scale(1);
+    border-radius: 1rem;
   }
   to {
     transform: scale(1.2);
     border: 0.5rem solid $primary-color;
+    border-radius: 1rem;
   }
 }
 @keyframes opacity {
@@ -63,6 +64,14 @@ $alt-background-color: white;
   }
   to {
     transform: translateX(100%);
+  }
+}
+@keyframes textColor {
+  from {
+    color: $primary-color;
+  }
+  to {
+    color: black;
   }
 }
 
@@ -125,6 +134,7 @@ body {
 .app {
   display:flex;
   flex-direction: column;
+  background-color: #d3d3d32e;
 }
 //Logo
 .logo{
@@ -171,21 +181,23 @@ body {
 
 
   &_logo {
-    background-image: url("../images/logo_red_transparent.png");
-    background-position: center;
-    background-size: cover;
-    width: 24vw;
-    height:100%;
+    //background-image: url("../images/logo_red_transparent.png");
+    //background-position: center;
+    //background-size: cover;
+    //width: 24vw;
+    //height:100%;
+    font-size: 3rem;
+    color: $primary-color;
+    display: flex;
+    align-items: center;
     margin-left: 1rem;
 
     @include tablet {
-      width: 20vw;
-      height: 100%;
+    font-size: 4rem;
     }
 
     @include desktop {
-    width: 8vw;
-    height: 100%;
+    font-size: 4rem;
     }
 
     &:hover {
@@ -207,6 +219,10 @@ body {
     color: $primary-color;
     font-size: 1.5rem;
     margin: 2rem;
+
+    &:hover {
+      animation: textColor .3s ease forwards, hooverZoom .3s ease forwards;
+    }
   }
 
   li {
@@ -413,11 +429,13 @@ body {
     justify-content: center;
     //height: 50vh;
     height: 60vh;
-    border: 4vw solid white;
+    //border: 4vw solid white;
     color: $primary-color;
     font-size: 2rem;
+    padding-left: 4vw;
+    padding-right: 4vw;
     @include desktop {
-      border: 4vw solid white;
+      //border: 4vw solid white;
     }
   }
 
@@ -474,6 +492,12 @@ body {
     align-items: center;
     font-size: 1.5rem;
 
+    @include tablet {
+      font-size: 2rem;
+    }
+    @include desktop {
+      font-size: 3rem;
+    }
   }
 }
 
@@ -526,7 +550,9 @@ body {
 //Footer
 .footer {
   height: 4vh;
+
   &_container {
+    box-shadow: 1px -8px 24px 0px lightgrey;
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -565,6 +591,7 @@ body {
   }
 }
 
+//ReactProjects
 .reactProjects {
   display: flex;
   justify-content: center;
@@ -587,11 +614,13 @@ body {
     list-style: none;
     width: 40%;
     height: 20vh;
+    box-shadow: 0px 0px 34px 3px rgba(135, 135, 135, 0.31);
     //background-image: url("../images/planyourride.jpeg");
     //background-size: cover;
     //background-position: center;
     //border: 0.5rem solid white;
     //border-radius: 1rem;
+    border-radius: 1rem;
     margin: 0.5rem;
 
     @include tablet {
@@ -603,10 +632,6 @@ body {
       //border: 1rem solid white;
       //border-radius: 2rem;
       margin: 1rem;
-
-      //&:hover {
-      //  animation: hoverZoom 0.3s ease forwards;
-      //}
     }
 
     p {
@@ -619,24 +644,150 @@ body {
         font-size: 2rem;
       }
     }
-    img {
-      width: 40%;
-      height: 20vh;
-      border: 0.5rem solid white;
+  }
+
+  &_link_planyourride {
+    background-image: url("../images/ReactProjects/planyourride.jpeg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+
+    &:hover {
+      animation: hoverZoom 0.3s ease forwards;
+    }
+  }
+}
+
+//StylingProjects
+.stylingProjects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100vw;
+  //height: 88vh;
+
+  &_list {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+    min-height: 88vh;
+  }
+  &_item {
+    list-style: none;
+    width: 40%;
+    height: 20vh;
+    box-shadow: 0px 0px 34px 3px rgba(135, 135, 135, 0.31);
+    //background-image: url("../images/planyourride.jpeg");
+    //background-size: cover;
+    //background-position: center;
+    //border: 0.5rem solid white;
+    //border-radius: 1rem;
+    border-radius: 1rem;
+    margin: 0.5rem;
+
+    @include tablet {
+      height: 30vh;
+    }
+    @include desktop {
+      width: 25vw;
+      height: 35vh;
+      //border: 1rem solid white;
+      //border-radius: 2rem;
+      margin: 1rem;
+    }
+
+    p {
+      margin: 0;
 
       @include tablet {
-        height: 30vh;
+        font-size: 2rem;
       }
       @include desktop {
-        width: 25vw;
-        height: 35vh;
-        margin: 1rem;
-
-        &:hover {
-          animation: hoverZoom 0.3s ease forwards;
-        }
+        font-size: 2rem;
       }
+    }
+  }
 
+  &_link {
+    &_ffreak-bestshop {
+      background-image: url("../images/StylingProjects/ffreak_bestshop.png");
+      background-size: cover;
+      background-position: center;
+      border-radius: 1rem;
+      width: 100%;
+      height: 100%;
+
+      &:hover {
+        animation: hoverZoom 0.3s ease forwards;
+      }
+    }
+    &_ffreak-verti {
+      background-image: url("../images/StylingProjects/ffreak_verti.png");
+      background-size: cover;
+      background-position: center;
+      border-radius: 1rem;
+      width: 100%;
+      height: 100%;
+
+      &:hover {
+        animation: hoverZoom 0.3s ease forwards;
+      }
+    }
+  }
+}
+
+//Snippets
+.snippets {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100vw;
+
+
+  &_list {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+    min-height: 88vh;
+  }
+  &_item {
+    list-style: none;
+    width: 40%;
+    height: 20vh;
+    box-shadow: 0px 0px 34px 3px rgba(135, 135, 135, 0.31);
+    border-radius: 1rem;
+    margin: 0.5rem;
+
+    @include tablet {
+      height: 30vh;
+    }
+    @include desktop {
+      width: 25vw;
+      height: 35vh;
+      margin: 1rem;
+    }
+
+    p {
+      margin: 0;
+
+      @include tablet {
+        font-size: 2rem;
+      }
+      @include desktop {
+        font-size: 2rem;
+      }
     }
   }
 }
