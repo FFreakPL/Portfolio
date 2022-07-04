@@ -1,3 +1,9 @@
+//Variables
+$primary-color: #DA0419;
+$background-color: black;
+$alt-background-color: white;
+
+
 //Keyframes
 @keyframes pulse {
   from {
@@ -15,6 +21,24 @@
   to {
     transform: scale(1.5);
     opacity: 1;
+  }
+}
+@keyframes hoverZoom {
+  from {
+    transfrom: scale(1);
+    border: 1rem solid white;
+  }
+  to {
+    transform: scale(1.2);
+    border: 0.5rem solid $primary-color;
+  }
+}
+@keyframes opacity {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.1;
   }
 }
 @keyframes fadeOut {
@@ -74,17 +98,13 @@
 @mixin urls {
   width: 100%;
   height: 100%;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   @include desktop {
     background-repeat: no-repeat;
   }
 }
 
-//Variables
-$primary-color: #DA0419;
-$background-color: black;
-$alt-background-color: white;
 
 body {
   @include font;
@@ -100,6 +120,11 @@ body {
 
 .hidden {
   display: none;
+}
+
+.app {
+  display:flex;
+  flex-direction: column;
 }
 //Logo
 .logo{
@@ -344,7 +369,7 @@ body {
 //Carousel
 .carousel {
   overflow: hidden;
-  height: 70vh;
+  height: 82vh;
   //box-shadow: 1px -10px 20px 10px lightgrey;
 
   &_button_prev,
@@ -429,30 +454,26 @@ body {
 
   &_reactProjects {
     @include urls;
-    background-image: url("../images/ReactProjects.jpg");
+    background-image: url("../images/ReactProjects.jpeg");
     border-radius: 2rem;
   }
   &_stylingProjects {
     @include urls;
-    background-image: url("../images/StylingProjects.jpg");
+    background-image: url("../images/StylingProjects.jpeg");
     border-radius: 2rem;
   }
   &_snippets {
     @include urls;
-    background-image: url("../images/Snippets.jpg");
+    background-image: url("../images/Snippets.jpeg");
     border-radius: 2rem;
   }
   &_header {
-    font-size: 2rem;
-    text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    //box-shadow: 1px 0px 30px 10px lightgrey;
-    //animation: leftToRight 3s cubic-bezier(.2,.99,.8,0) infinite;
-    @include desktop {
-      font-size: 4rem;
-      margin-bottom: 0;
-    }
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+
   }
 }
 
@@ -504,19 +525,12 @@ body {
 
 //Footer
 .footer {
-
+  height: 4vh;
   &_container {
+    height: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    //height: 8vh;
-
-    @include tablet {
-      height: 12vh;
-    }
-    @include desktop {
-      height: 10vh;
-    }
+    align-items: center;
   }
 
   img {
@@ -551,3 +565,78 @@ body {
   }
 }
 
+.reactProjects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100vw;
+  //height: 88vh;
+
+  &_list {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+    min-height: 88vh;
+  }
+  &_item {
+    list-style: none;
+    width: 40%;
+    height: 20vh;
+    //background-image: url("../images/planyourride.jpeg");
+    //background-size: cover;
+    //background-position: center;
+    //border: 0.5rem solid white;
+    //border-radius: 1rem;
+    margin: 0.5rem;
+
+    @include tablet {
+      height: 30vh;
+    }
+    @include desktop {
+      width: 25vw;
+      height: 35vh;
+      //border: 1rem solid white;
+      //border-radius: 2rem;
+      margin: 1rem;
+
+      //&:hover {
+      //  animation: hoverZoom 0.3s ease forwards;
+      //}
+    }
+
+    p {
+      margin: 0;
+
+      @include tablet {
+        font-size: 2rem;
+      }
+      @include desktop {
+        font-size: 2rem;
+      }
+    }
+    img {
+      width: 40%;
+      height: 20vh;
+      border: 0.5rem solid white;
+
+      @include tablet {
+        height: 30vh;
+      }
+      @include desktop {
+        width: 25vw;
+        height: 35vh;
+        margin: 1rem;
+
+        &:hover {
+          animation: hoverZoom 0.3s ease forwards;
+        }
+      }
+
+    }
+  }
+}

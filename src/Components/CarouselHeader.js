@@ -4,9 +4,7 @@ import "../css/out.css";
 function CarouselHeader() {
 
     return (
-        <div className="carousel_header">
-            Make your choice
-        </div>
+        <div className="carousel_header">Make your choice</div>
     )
 }
 
