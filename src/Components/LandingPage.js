@@ -8,7 +8,7 @@ import Footer from "./Footer";
 
 function LandingPage() {
 const navigate = useNavigate();
-const subPages = ["reactProjects", "stylingProjects", "snippets"];
+const subPages = ["reactProjects", "stylingProjects", "snippets", "github"];
 
     return (
         <>

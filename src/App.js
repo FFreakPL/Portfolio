@@ -8,6 +8,7 @@ import Hobby from "./Components/Hobby";
 import ReactProjects from "./Components/Reactprojects";
 import StylingProjects from "./Components/Stylingprojects";
 import Snippets from "./Components/Snippets";
+import Github from "./Components/Github";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
               <Route exact path="/reactProjects" element={<ReactProjects />} />
               <Route exact path="/stylingProjects" element={<StylingProjects />} />
               <Route exact path="/snippets" element={<Snippets />} />
+              <Route exact path="/Github" element={<Github />} />
               <Route exact path="/contact" element={<Contact />} />
               <Route exact path="/hobby" element={<Hobby />} />
               <Route exact path="/about" element={<About />} />

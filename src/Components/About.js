@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header'
 import "../css/out.css";
+import Footer from './Footer';
 
 function About() {
 
@@ -21,7 +22,7 @@ function About() {
 
                 <h2>Skills</h2>>
 
-                <p align="left">
+                <p style={{margin: "0"}}>
                     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg" width="36" height="36" alt="JavaScript" /></a>
                     <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/html5-colored.svg" width="36" height="36" alt="HTML5" /></a>
                     <a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg" width="36" height="36" alt="React" /></a>
@@ -40,8 +41,8 @@ function About() {
                     <a href="https://www.adobe.com/"><img src="https://user-images.githubusercontent.com/94534923/176645705-b0497d14-a8d8-476b-af20-7a11f6327d13.png" width="36" height="36" alt="Spark"/></a>
                     <a href="https://www.reasonstudios.com/"><img src="https://user-images.githubusercontent.com/94534923/176648597-0f863fd5-6411-4e50-ace3-8a1fc45e8210.jpeg" width="36" height="36" alt="Reason"/></a>
                 </p>
-
             </div>
+            <Footer/>
         </>
     )
 }
