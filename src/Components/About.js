@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './Header'
-// import "../css/out.css";
 import Footer from './Footer';
 
 function About() {

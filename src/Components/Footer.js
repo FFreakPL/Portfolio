@@ -1,8 +1,6 @@
-import React, { useState, useEffect} from 'react';
-import { useNavigate } from "react-router-dom";
+import React from 'react';
 import instagram from "../images/instagram.svg";
 import github from "../images/github.svg";
-// import "../css/out.css";
 
 function Footer() {
 
