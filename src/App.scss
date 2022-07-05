@@ -1,4 +1,11 @@
-@import "sass/reset";
+@import "reset";
+
+//Fonts
+@font-face {
+  font-family: "League Gothic";
+  font-style: italic;
+  src: url("./fonts/LeagueGothic-Italic.otf") format("opentype");
+}
 
 //Variables
 $primary-color: #DA0419;
@@ -120,7 +127,7 @@ $shadow-color: lightgrey;
   animation: zoomIn 2s ease alternate, pulse 1s 2s infinite alternate;
 }
 @mixin font {
-  font-family: league-gothic, sans-serif;
+  font-family: League Gothic, sans-serif;
   font-style: italic;
   color: #DA0419;
 }
