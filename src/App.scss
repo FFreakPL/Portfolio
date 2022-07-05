@@ -86,6 +86,14 @@ $shadow-color: lightgrey;
     color: $primary-color;
   }
 }
+@keyframes dizzy {
+  from {
+    transform: rotate(-0.2deg)
+  }
+  to {
+    transform: rotate(0.2deg)
+  }
+}
 
 //Mixins
 @mixin desktop {
@@ -136,6 +144,11 @@ $shadow-color: lightgrey;
   }
   &:hover {
     cursor: pointer;
+  }
+}
+@mixin makeMeDizzy {
+  &:hover {
+    animation: dizzy .005s ease-in-out infinite;
   }
 }
 
@@ -200,7 +213,7 @@ body {
   color: #FFF;
   height: 8vh;
   width:100vw;
-
+  position:relative;
 
   &_logo {
     font-size: 6vh;
