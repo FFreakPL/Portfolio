@@ -1,10 +1,10 @@
-@import "./reset";
+@import "sass/reset";
 
 //Variables
 $primary-color: #DA0419;
 $background-color: black;
 $alt-background-color: white;
-
+$shadow-color: lightgrey;
 
 //Keyframes
 @keyframes pulse {
@@ -76,6 +76,16 @@ $alt-background-color: white;
     color: black;
   }
 }
+@keyframes githubIcon{
+  from {
+    transform: scale(1);
+    color: black;
+  }
+  to {
+    transform: scale(1.25);
+    color: $primary-color;
+  }
+}
 
 //Mixins
 @mixin desktop {
@@ -96,7 +106,7 @@ $alt-background-color: white;
 @mixin logoContainer {
   border: none;
   background-color: transparent;
-  background-image: url("../images/logo_red_transparent.png");
+  background-image: url("images/logo_red_transparent.png");
   background-position: center;
   background-size: cover;
   animation: zoomIn 2s ease alternate, pulse 1s 2s infinite alternate;
@@ -115,8 +125,21 @@ $alt-background-color: white;
     background-repeat: no-repeat;
   }
 }
+@mixin projectsStyle {
+  @include urls;
+  border-radius: 2rem;
+  @include tablet {
+    width: 80%;
+  }
+  @include desktop {
+    width: 60%;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
 
-
+//General
 body {
   @include font;
   font-size: 16px;
@@ -128,14 +151,13 @@ body {
   align-items: center;
   background-color: $alt-background-color;
 }
-
 .hidden {
   display: none;
 }
-
 .app {
   background-color: #d3d3d32e;
 }
+
 //Logo
 .logo{
   width: 100vw;
@@ -174,26 +196,18 @@ body {
   align-items: center;
   justify-content: space-between;
   background-color: $alt-background-color;
-  box-shadow: 1px -10px 20px 10px lightgrey;
+  box-shadow: 1px -10px 20px 10px $shadow-color;
   color: #FFF;
   height: 8vh;
   width:100vw;
 
 
   &_logo {
-    font-size: 3rem;
+    font-size: 6vh;
     color: $primary-color;
     display: flex;
     align-items: center;
     margin-left: 1rem;
-
-    @include tablet {
-    font-size: 4rem;
-    }
-
-    @include desktop {
-    font-size: 4rem;
-    }
 
     &:hover {
       cursor: pointer;
@@ -203,7 +217,6 @@ body {
     }
   }
 }
-
 .menu {
   display: flex;
   flex-direction: row;
@@ -215,17 +228,22 @@ body {
   &_route {
     text-decoration: none;
     color: $primary-color;
-    font-size: 1.5rem;
-    margin: 2rem;
+    font-size: 2.5vh;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:hover {
       animation: textColor .3s ease forwards, hooverZoom .3s ease forwards;
     }
   }
 
-  li {
+  &_element {
     margin: 0 1rem;
     overflow: hidden;
+    width: 8vw;
   }
 
   &_button_container {
@@ -242,7 +260,6 @@ body {
 #menu_toggle {
   display: none;
 }
-
 .menu_button,
 .menu_button::before,
 .menu_button::after {
@@ -254,31 +271,25 @@ body {
   transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
   border-radius: 2px;
 }
-
 .menu_button::before {
   content: '';
   margin-top: -8px;
 }
-
 .menu_button::after {
   content: '';
   margin-top: 8px;
 }
-
 #menu_toggle:checked + .menu_button_container .menu_button::before {
   margin-top: 0px;
   transform: rotate(405deg);
 }
-
 #menu_toggle:checked + .menu_button_container .menu_button {
   background: transparent;
 }
-
 #menu_toggle:checked + .menu_button_container .menu_button::after {
   margin-top: 0px;
   transform: rotate(-405deg);
 }
-
 @include mobile {
   .menu {
     position: absolute;
@@ -289,7 +300,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0;
-    box-shadow: 0px 8px 20px 0px lightgrey;
+    box-shadow: 0px 8px 20px 0px $shadow-color;
     z-index: 1;
 
     &_button_container {
@@ -325,7 +336,7 @@ body {
       display: flex;
       transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
       align-items: center;
-      box-shadow: 0px 0px 3px 0px lightgrey;
+      box-shadow: 0px 0px 3px 0px $shadow-color;
     }
   }
 }
@@ -339,7 +350,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0;
-    box-shadow: 0px 8px 20px 0px lightgrey;
+    box-shadow: 0px 8px 20px 0px $shadow-color;
     z-index: 1;
 
     &_button_container {
@@ -375,7 +386,7 @@ body {
       display: flex;
       transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
       align-items: center;
-      box-shadow: 0px 0px 3px 0px lightgrey;
+      box-shadow: 0px 0px 3px 0px $shadow-color;
     }
   }
 }
@@ -385,11 +396,6 @@ body {
   overflow: hidden;
   height: 82vh;
 
-  @include desktop {
-    height: 80vh;
-  }
-  //box-shadow: 1px -10px 20px 10px lightgrey;
-
   &_button_prev,
   &_button_prev, {
     margin: 5px;
@@ -397,7 +403,7 @@ body {
   &_button_prev {
     @include font;
     position: absolute;
-    top: 44%;
+    top: 40%;
     left: 3.5vw;
     margin: 5px;
     border: none;
@@ -413,7 +419,7 @@ body {
   &_button_next {
     @include font;
     position: absolute;
-    top: 44%;
+    top: 40%;
     right: 3.5vw;
     margin: 5px;
     border: none;
@@ -429,16 +435,12 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    //height: 50vh;
     height: 60vh;
-    //border: 4vw solid white;
     color: $primary-color;
     font-size: 2rem;
     padding-left: 4vw;
     padding-right: 4vw;
-    @include desktop {
-      //border: 4vw solid white;
-    }
+    width: 92%;
   }
 
   &_indicators {
@@ -455,7 +457,7 @@ body {
   }
   &_btn {
     border-radius: 50%;
-    border: 2px solid lightgrey;
+    border: 2px solid $shadow-color;
     opacity: 0.5;
     background-color: transparent;
     margin-left: 0.5rem;
@@ -471,50 +473,38 @@ body {
     align-items: center;
   }
 
-
   &_reactProjects {
     @include urls;
-    background-image: url("../images/ReactProjects.jpeg");
-    border-radius: 2rem;
+    background-image: url("images/ReactProjects.jpeg");
+    @include projectsStyle;
   }
   &_stylingProjects {
     @include urls;
-    background-image: url("../images/StylingProjects.jpeg");
-    border-radius: 2rem;
+    background-image: url("images/StylingProjects.jpeg");
+    @include projectsStyle;
   }
   &_snippets {
     @include urls;
-    background-image: url("../images/Snippets.jpeg");
-    border-radius: 2rem;
+    background-image: url("images/Snippets.jpeg");
+    @include projectsStyle;
   }
   &_github {
     @include urls;
-    background-image: url("../images/GithubAccount.jpeg");
-    border-radius: 2rem;
+    background-image: url("images/GithubAccount.jpeg");
+    @include projectsStyle;
   }
   &_header {
     height: 6vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
-
-    @include tablet {
-      font-size: 2rem;
-    }
-    @include desktop {
-      font-size: 3rem;
-      height: 8vh;
-    }
+    font-size: 3vh;
   }
 }
-
-
 .inner {
   white-space: nowrap;
   transition: transform .3s;
 }
-
 .fa-arrow-left-long {
   color: $primary-color;
   font-size: 3rem;
@@ -522,7 +512,6 @@ body {
     cursor: pointer;
   }
 }
-
 .fa-arrow-right-long {
   color: $primary-color;
   font-size: 3rem;
@@ -540,12 +529,13 @@ body {
   line-height: 1.5;
   text-align: center;
   height: 88vh;
+  font-size: 2vh;
 
   @include desktop {
-    font-size: 2rem;
+    font-size: 3vh;
   }
   @include tablet {
-    font-size: 2rem;
+    font-size: 2.5vh;
   }
 
   &_description {
@@ -564,11 +554,43 @@ body {
 .hobby {
   height: 88vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  text-align: center;
-  font-size: 4rem;
+  flex-direction:column;
+  //justify-content: center;
+  //align-items: center;
+  //text-align: center;
+  //margin: 0 auto;
+  //width: 75vw;
+
+  &_container {
+    width: 70vw;
+    margin: 3vh auto;
+  }
+
+  &_description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width:100vw;
+    font-size: 3vh;
+    text-align: center;
+    margin-top: 4vh;
+  }
+
+  &_figure {
+    height: 0;
+    padding-bottom: 56.25%;
+    position: relative;
+    width: 100%;
+
+    iframe {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
 }
 
 //Footer
@@ -576,7 +598,7 @@ body {
   height: 4vh;
 
   &_container {
-    box-shadow: 1px -8px 24px 0px lightgrey;
+    box-shadow: 1px -8px 24px 0px $shadow-color;
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -584,26 +606,14 @@ body {
   }
 
   img {
-    height: 1rem;
-    @include tablet {
-      height: 2rem;
-    }
-    @include desktop {
-      height: 2rem;
-    }
+    height: 3vh;
   }
 
   &_info {
     margin-left: 1rem;
     display: flex;
     align-items: center;
-    font-size: 1rem;
-    @include tablet {
-      font-size: 1.5rem;
-    }
-    @include desktop {
-      font-size: 1.5rem;
-    }
+    font-size: 2vh;
   }
 
   &_icons {
@@ -622,7 +632,6 @@ body {
   align-items: center;
   flex-wrap: wrap;
   width: 100vw;
-  //height: 88vh;
 
   &_list {
     padding: 0;
@@ -639,11 +648,6 @@ body {
     width: 40%;
     height: 20vh;
     box-shadow: 0px 0px 34px 3px rgba(135, 135, 135, 0.31);
-    //background-image: url("../images/planyourride.jpeg");
-    //background-size: cover;
-    //background-position: center;
-    //border: 0.5rem solid white;
-    //border-radius: 1rem;
     border-radius: 1rem;
     margin: 0.5rem;
 
@@ -653,8 +657,6 @@ body {
     @include desktop {
       width: 25vw;
       height: 35vh;
-      //border: 1rem solid white;
-      //border-radius: 2rem;
       margin: 1rem;
     }
 
@@ -671,7 +673,7 @@ body {
   }
 
   &_link_planyourride {
-    background-image: url("../images/ReactProjects/planyourride.jpeg");
+    background-image: url("images/ReactProjects/planyourride.jpeg");
     background-size: cover;
     background-position: center;
     border-radius: 1rem;
@@ -691,7 +693,6 @@ body {
   align-items: center;
   flex-wrap: wrap;
   width: 100vw;
-  //height: 88vh;
 
   &_list {
     padding: 0;
@@ -708,11 +709,6 @@ body {
     width: 40%;
     height: 20vh;
     box-shadow: 0px 0px 34px 3px rgba(135, 135, 135, 0.31);
-    //background-image: url("../images/planyourride.jpeg");
-    //background-size: cover;
-    //background-position: center;
-    //border: 0.5rem solid white;
-    //border-radius: 1rem;
     border-radius: 1rem;
     margin: 0.5rem;
 
@@ -722,8 +718,6 @@ body {
     @include desktop {
       width: 25vw;
       height: 35vh;
-      //border: 1rem solid white;
-      //border-radius: 2rem;
       margin: 1rem;
     }
 
@@ -741,7 +735,7 @@ body {
 
   &_link {
     &_ffreak-bestshop {
-      background-image: url("../images/StylingProjects/ffreak_bestshop.png");
+      background-image: url("images/StylingProjects/ffreak_bestshop.png");
       background-size: cover;
       background-position: center;
       border-radius: 1rem;
@@ -753,7 +747,7 @@ body {
       }
     }
     &_ffreak-verti {
-      background-image: url("../images/StylingProjects/ffreak_verti.png");
+      background-image: url("images/StylingProjects/ffreak_verti.png");
       background-size: cover;
       background-position: center;
       border-radius: 1rem;
@@ -838,17 +832,6 @@ body {
   }
 }
 
-@keyframes githubIcon{
-  from {
-    transform: scale(1);
-    color: black;
-  }
-  to {
-    transform: scale(1.25);
-    color: $primary-color;
-  }
-}
-
 .fa-github {
   font-size: 10rem;
   color: black;
@@ -890,7 +873,7 @@ body {
 
   &__input {
     border: none;
-    border-bottom: 1px solid lightgrey;
+    border-bottom: 1px solid $shadow-color;
     background-color: transparent;
     line-height: 2.625rem;
   }
@@ -931,14 +914,14 @@ body {
       height: 25px;
       width: 25px;
       background-color: white;
-      border: 1px solid lightgrey;
+      border: 1px solid $shadow-color;
       border-radius: 4px;
     }
 
     .consent__text {
       margin: 0 10px;
       font-size: 0.75rem;
-      color: lightgrey;
+      color: $shadow-color;
       line-height: 17px;
     }
   }

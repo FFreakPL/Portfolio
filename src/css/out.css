@@ -528,17 +528,11 @@ body {
   height: 8vh;
   width: 100vw; }
   .top_nav_logo {
-    font-size: 3rem;
+    font-size: 6vh;
     color: #DA0419;
     display: flex;
     align-items: center;
     margin-left: 1rem; }
-    @media (min-width: 768px) and (max-width: 1279px) {
-      .top_nav_logo {
-        font-size: 4rem; } }
-    @media (min-width: 1280px) {
-      .top_nav_logo {
-        font-size: 4rem; } }
     .top_nav_logo:hover {
       cursor: pointer; }
       @media (min-width: 1280px) {
@@ -692,7 +686,7 @@ body {
     font-style: italic;
     color: #DA0419;
     position: absolute;
-    top: 44%;
+    top: 40%;
     left: 3.5vw;
     margin: 5px;
     border: none;
@@ -708,7 +702,7 @@ body {
     font-style: italic;
     color: #DA0419;
     position: absolute;
-    top: 44%;
+    top: 40%;
     right: 3.5vw;
     margin: 5px;
     border: none;
@@ -727,7 +721,10 @@ body {
     color: #DA0419;
     font-size: 2rem;
     padding-left: 4vw;
-    padding-right: 4vw; }
+    padding-right: 4vw;
+    width: 92%; }
+    .carousel_item:hover {
+      cursor: pointer; }
   .carousel_indicators {
     display: flex;
     justify-content: center; }
@@ -759,6 +756,9 @@ body {
     @media (min-width: 1280px) {
       .carousel_reactProjects {
         background-repeat: no-repeat; } }
+    @media (min-width: 1280px) {
+      .carousel_reactProjects {
+        width: 60%; } }
   .carousel_stylingProjects {
     width: 100%;
     height: 100%;
@@ -769,6 +769,9 @@ body {
     @media (min-width: 1280px) {
       .carousel_stylingProjects {
         background-repeat: no-repeat; } }
+    @media (min-width: 1280px) {
+      .carousel_stylingProjects {
+        width: 60%; } }
   .carousel_snippets {
     width: 100%;
     height: 100%;
@@ -779,6 +782,9 @@ body {
     @media (min-width: 1280px) {
       .carousel_snippets {
         background-repeat: no-repeat; } }
+    @media (min-width: 1280px) {
+      .carousel_snippets {
+        width: 60%; } }
   .carousel_github {
     width: 100%;
     height: 100%;
@@ -789,6 +795,9 @@ body {
     @media (min-width: 1280px) {
       .carousel_github {
         background-repeat: no-repeat; } }
+    @media (min-width: 1280px) {
+      .carousel_github {
+        width: 60%; } }
   .carousel_header {
     height: 6vh;
     display: flex;
@@ -826,13 +835,14 @@ body {
   align-items: center;
   line-height: 1.5;
   text-align: center;
-  height: 88vh; }
+  height: 88vh;
+  font-size: 2vh; }
   @media (min-width: 1280px) {
     .aboutme {
-      font-size: 2rem; } }
+      font-size: 3vh; } }
   @media (min-width: 768px) and (max-width: 1279px) {
     .aboutme {
-      font-size: 2rem; } }
+      font-size: 2.5vh; } }
   .aboutme_description {
     margin: 0; }
 

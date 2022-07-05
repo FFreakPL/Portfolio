@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import { useNavigate, Link } from "react-router-dom";
-import "../css/out.css";
+// import "../css/out.css";
 import Header from "./Header";
 import Carousel, {CarouselItem} from "./Carousel";
 import CarouselHeader from "./CarouselHeader";

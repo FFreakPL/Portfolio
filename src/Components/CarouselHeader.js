@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/out.css";
+// import "../css/out.css";
 
 function CarouselHeader() {
 

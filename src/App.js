@@ -1,4 +1,4 @@
-import './css/out.css';
+import './App.scss';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Logo from "./Components/Logo"
 import LandingPage from "./Components/LandingPage";
