@@ -13,8 +13,11 @@ function Photos() {
                 I try to photograph everything I find to be awesome:)
             </div>
         <div className="hobby_photos_container">
-            {photosData.map((photo) =>
-                <img className="hobby_photo" src={`${photo.path}`}/>
+            {photosData.map((photo) => {
+                return (
+                        <img className="hobby_photo" src={require(`../images/${photo.path}`)}/>
+                )
+            }
             )}
         </div>
 

@@ -3,7 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 function StylingProjects() {
-    const projects = ["ffreak-bestshop", "ffreak-verti"];
+    const projects = ["ffreak-bestshop", "ffreak-verti", "giveingoodhands"];
     const [hreff, setHreff] = useState("");
 
     useEffect(() => {
