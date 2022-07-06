@@ -3,7 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 function ReactProjects() {
-    const projects = ["planyourride", "giveingoodhands", "planyourride"];
+    const projects = ["planyourride", "giveingoodhands"];
     const [hreff, setHreff] = useState("");
 
     useEffect(() => {
