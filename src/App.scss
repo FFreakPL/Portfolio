@@ -624,10 +624,10 @@ body {
 
   &_figure {
     height: 0;
-    padding-bottom: 25.3125%;
+    padding-bottom: 45%;
     position: relative;
     margin: 1rem 1rem 1rem 1rem;
-    width: 45vw;
+    width: 80vw;
 
     @include tablet {
       padding-bottom: 22.5%;
@@ -635,8 +635,8 @@ body {
     }
 
     @include desktop {
-      padding-bottom: 16.875%;
-      width:30vw;
+      padding-bottom: 20.8125%;
+      width: 37vw;
     }
     iframe {
       height: 100%;
@@ -846,7 +846,7 @@ body {
 
   &_link {
     &_ffreak-bestshop {
-      background-image: url("images/StylingProjects/ffreak_bestshop.png");
+      background-image: url("images/StylingProjects/ffreak_bestshop.jpeg");
       background-size: cover;
       background-position: center;
       border-radius: 1rem;
@@ -858,7 +858,7 @@ body {
       }
     }
     &_ffreak-verti {
-      background-image: url("images/StylingProjects/ffreak_verti.png");
+      background-image: url("images/StylingProjects/ffreak_verti.jpeg");
       background-size: cover;
       background-position: center;
       border-radius: 1rem;
