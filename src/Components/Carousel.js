@@ -14,18 +14,18 @@ const Carousel = ({ children}) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [paused, setPaused] = useState(false);
 
-    // useEffect(() => {
-    //     const interval = setInterval(() => {
-    //         if (!paused) {
-    //             updateIndex(activeIndex + 1);
-    //         }
-    //     }, 2000);
-    //     return () => {
-    //         if (interval) {
-    //             clearInterval(interval)
-    //         }
-    //     };
-    // });
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (!paused) {
+                updateIndex(activeIndex + 1);
+            }
+        }, 2000);
+        return () => {
+            if (interval) {
+                clearInterval(interval)
+            }
+        };
+    });
 
     const updateIndex = (newIndex) => {
         if (newIndex < 0) {

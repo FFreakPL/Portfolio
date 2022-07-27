@@ -1,6 +1,5 @@
 import React, { useState, useEffect} from 'react';
 import photosData from './PhotosData'
-import instagram from "../images/instagram.svg";
 
 function Photos() {
 

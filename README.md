@@ -5,8 +5,18 @@ in progress...
 <p><img width="360" alt="logo page" src="https://user-images.githubusercontent.com/94534923/176795522-22773069-8ef7-4bef-b19c-790691099e07.png"></p>
 
 `Responsive landing page`
-<p><img width="360" alt="desktop landing page" src="https://user-images.githubusercontent.com/94534923/176795840-12a04419-ee82-4d46-97cf-f47167ee86e7.png"></p>
-<p><img width="360" alt="mobile landing page" src="https://user-images.githubusercontent.com/94534923/176795842-5fd5a517-81f4-406c-aa23-1193c9d5915b.png"></p>
+<p><img width="360" alt="desktop landing page" src="https://user-images.githubusercontent.com/94534923/181224966-d3731d6f-8cdf-495e-8979-4c3b0a46679e.png">
+<img height="230" alt="tablet landing page" src="https://user-images.githubusercontent.com/94534923/181224985-9685d155-1abb-48b6-934b-40888db47865.png">
+<img height="230" alt="mobile landing page" src="https://user-images.githubusercontent.com/94534923/181224991-6fd8e719-3157-4291-950f-3a449a2091af.png"></p>
+
+`Burger Menu for Tablet/Mobile`
+<p><img height="230" alt="mobile burger menu" src="https://user-images.githubusercontent.com/94534923/181224994-9d1881cc-3ca7-4142-8be3-b6c7e518c06d.png">
+</p>
+
+`Responsive SubPages`
+<p><img width="360" alt="desktop landing page" src="https://user-images.githubusercontent.com/94534923/181224976-f96880d2-1a69-4dab-9fae-dde6d86b959a.png">
+<img width="360" alt="tablet landing page" src="https://user-images.githubusercontent.com/94534923/181224977-c46242a0-5cca-4b24-86fa-851439d30d35.png">
+<img width="360" alt="mobile landing page" src="https://user-images.githubusercontent.com/94534923/181224982-b3f6dc4b-0e37-4a4d-8dfe-cc9cf6358e92.png"></p>
 
 ## Running APP
 <p>https://ffreakpl.vercel.app</p>
@@ -14,6 +24,8 @@ in progress...
 ## Feautures
 <li>Responsive design</li>
 <li>Mobile first</li>
+<li>Responsive Carousel with react-swipeable function</li>
+<li>Youtube iframes<li>
 in progress...
 
 ## Technologies
